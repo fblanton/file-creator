@@ -1,6 +1,7 @@
 const express = require('express');
 const jsonParser = require('body-parser').json();
 const uuid = require('uuid-v4');
+const path = require('path');
 
 const MAX = 1000; // set maximum number of files in memory
 const TIMEOUT = 70000; // delete file after so many ms
@@ -8,7 +9,11 @@ let files = [];
 
 const app = express();
 
-app.use(express.static('./public'));
+var isProduction = process.env.NODE_ENV === 'production';
+var port = isProduction ? process.env.PORT : 3001;
+var publicPath = path.resolve(__dirname, 'public');
+
+app.use(express.static(publicPath));
 app.use(jsonParser);
 
 app.post('/download', (req, res) => {
@@ -27,7 +32,7 @@ app.get('/download/:_id', (req, res) => {
   res.send(content);
 });
 
-app.listen(3001);
+app.listen(port, () => console.log('Listening on port ', + port));
 
 const add = ({ name, content }) => {
   const _id = uuid();
