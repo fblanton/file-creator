@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="default.css">
+    <title>File Creator</title>
+  </head>
+  <body>
+    <h1>File Creator</h1>
+    <h3>Exports an HTML document from a given string.</h3>
+    <form>
+      <div class="left">
+        <label>File Content:</label>
+      </div>
+      <textarea id="content"><!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hello World!</title>
+</head>
+<body>
+  <h1>Hello World!</h1>
+</body>
+</html></textarea>
+      <div class="left">
+        <label>Filename:</label>
+        <input id="name" value="index"><label>.html</label>
+        <div>
+          <button id="download">Create Download</button>
+          <a id="result">...</a>
+        </div>
+      </div>
+    </form>
+    <script src="default.js"></script>
+  </body>
+</html>

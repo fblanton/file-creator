@@ -1,0 +1,30 @@
+body {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+* {
+  font-family: monospace;
+}
+
+textarea {
+  width: 50%;
+  height: 300px;
+  font-size: 1.2rem;
+}
+
+.left {
+  width: 50%;
+  margin: 10px auto;
+  text-align: left;
+}
+
+input {
+  font-size: 1em;
+  width: 70%;
+}
+
+button {
+  font-size: 1em;
+  margin-top: 10px;
+}
