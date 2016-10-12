@@ -2,7 +2,7 @@ const express = require('express');
 const jsonParser = require('body-parser').json();
 const uuid = require('uuid-v4');
 
-const MAX = 2; // set maximum number of files in memory
+const MAX = 1000; // set maximum number of files in memory
 const TIMEOUT = 70000; // delete file after so many ms
 let files = [];
 
