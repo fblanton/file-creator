@@ -15,6 +15,13 @@ var publicPath = path.resolve(__dirname, 'public');
 
 app.use(express.static(publicPath));
 app.use(jsonParser);
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+  next();
+})
 
 app.post('/download', (req, res) => {
   const _id = add(req.body);
