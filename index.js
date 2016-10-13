@@ -18,6 +18,8 @@ app.use(jsonParser);
 
 app.post('/download', (req, res) => {
   const _id = add(req.body);
+  res.status(201);
+  res.set('Access-Control-Allow-Origin', '*');
   res.send(JSON.stringify({ _id, timer: TIMEOUT }));
   setTimeout(remove, TIMEOUT, _id);
 });
